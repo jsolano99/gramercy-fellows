@@ -47,6 +47,8 @@ input,textarea,button{font:inherit}
 .gf-loader{display:none}
 .gf-in,.gf-up,.gf-w,.gf-bar,.gf-base,.gf-arch,.gf-lamp,.gf-glass,.gf-halo{animation:none !important;stroke-dashoffset:0}
 }
+.gf-week{display:grid;grid-template-columns:96px minmax(0,1.3fr) minmax(0,1fr) 210px;align-items:baseline;gap:12px 32px;padding:30px 0;border-top:1px solid #E4DED5}
+@media (max-width: 900px){.gf-week{grid-template-columns:minmax(0,1fr)}}
 .gf-field{border:0;border-bottom:1px solid #5C4F46;background:transparent;color:#FAF8F4;padding:12px 0;font-size:17px;outline:none}
 .gf-field:focus{border-bottom-color:#FAF8F4}
 </style>
@@ -74,7 +76,7 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
   <section style="padding: 12px">
     <div style="background: #F2EEE7; border-radius: 28px; min-height: calc(100vh - 24px); display: flex; flex-direction: column; padding: 20px clamp(16px, 3vw, 32px) 32px; box-sizing: border-box">
       <nav class="gf-in" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; animation-delay: var(--gf-d)">
-        <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+        <a href="#top" style="display: flex; align-items: center; gap: 5px; text-decoration: none">
           <svg width="26" height="26" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="6" y="58" width="52" height="4" fill="#2E241F"></rect><path d="M9 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M18 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M42 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M51 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M7 45H57" stroke="#2E241F" stroke-width="3"></path><path d="M26.5 29h11v3H36v26h-8V32h-1.5z" fill="#2E241F"></path><g><circle cx="32" cy="4.5" r="1.8" fill="#2E241F"></circle><path d="M25 12l7-5.5 7 5.5z" fill="#2E241F"></path><path d="M25.5 12.5h13L36 24h-8z" fill="#2E241F"></path><path d="M28 14.8h8l-1.6 7h-4.8z" fill="#FAF8F4"></path><rect x="31.4" y="14.5" width="1.2" height="7.5" fill="#2E241F"></rect><path d="M28.5 24h7L34 27h-4z" fill="#2E241F"></path><rect x="30.5" y="26.5" width="3" height="3" fill="#2E241F"></rect></g></svg>
           <span class="gf-serif" style="font-size: 24px; letter-spacing: -0.01em">Gramercy Fellows</span>
         </a>
@@ -89,7 +91,7 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
       </nav>
 
       <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 28px; padding: 72px 0 40px">
-        <div class="gf-in" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E; animation-delay: calc(var(--gf-d) + 0.05s)">New York City · Cohort 01 · Four weeks · [DATES]</div>
+        <div class="gf-in" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E; animation-delay: calc(var(--gf-d) + 0.05s)">New York City · Cohort 01 · Four weeks · Jan 5 – Feb 2, 2027</div>
         <h1 class="gf-serif gf-in" style="margin: 0; font-size: clamp(54px, 8.6vw, 132px); line-height: 0.94; letter-spacing: -0.035em; max-width: 1180px; animation-delay: calc(var(--gf-d) + 0.12s)">Four weeks to change the
           <span aria-hidden="true" style="display: inline-block; width: 1.35em; height: 0.72em; border-radius: 0.18em; vertical-align: 0.02em; background: #2F4A36; overflow: hidden; position: relative"><svg viewBox="0 0 120 64" preserveAspectRatio="xMidYMax slice" style="position: absolute; inset: 0; width: 100%; height: 100%" fill="none" stroke="#FAF8F4" stroke-opacity="0.85" stroke-width="2.5"><path d="M10 64V30M24 64V30M38 64V30M52 64V30M66 64V30M80 64V30M94 64V30M108 64V30M4 30h112M4 40h112"></path><path d="M44 30a16 16 0 0 1 32 0"></path></svg></span>
           trajectory of your <span class="gf-i">life.</span></h1>
@@ -175,29 +177,29 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
         <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4A3F38; max-width: 520px">Every week is a working session, a real deliverable, and a dinner with founders building the companies you want to join.</p>
       </div>
       <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
-        <li class="gf-up" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 30px 0; border-top: 1px solid #E4DED5">
+        <li class="gf-up gf-week">
           <span style="flex: 0 0 96px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Week 01</span>
           <span class="gf-serif" style="flex: 1 1 360px; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Work with AI like a <span class="gf-i">team of five</span></span>
           <span style="flex: 1 1 280px; font-size: 16px; line-height: 1.5; color: #4A3F38">The research, writing and analysis workflows the best operators use every day.</span>
-          <span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: your AI stack</span>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px"><span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: your AI stack</span><span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E; padding-left: 15px">Taught by X</span></div>
         </li>
-        <li class="gf-up" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 30px 0; border-top: 1px solid #E4DED5">
+        <li class="gf-up gf-week">
           <span style="flex: 0 0 96px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Week 02</span>
           <span class="gf-serif" style="flex: 1 1 360px; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Run a project <span class="gf-i">end to end</span></span>
           <span style="flex: 1 1 280px; font-size: 16px; line-height: 1.5; color: #4A3F38">Scope, prioritize and deliver a real brief from a partner startup.</span>
-          <span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: a partner project</span>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px"><span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: a partner project</span><span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E; padding-left: 15px">Taught by X</span></div>
         </li>
-        <li class="gf-up" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 30px 0; border-top: 1px solid #E4DED5">
+        <li class="gf-up gf-week">
           <span style="flex: 0 0 96px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Week 03</span>
           <span class="gf-serif" style="flex: 1 1 360px; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Build <span class="gf-i">in public</span></span>
           <span style="flex: 1 1 280px; font-size: 16px; line-height: 1.5; color: #4A3F38">Write and post about your work so the right people find you first.</span>
-          <span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: three public posts</span>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px"><span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: three public posts</span><span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E; padding-left: 15px">Taught by X</span></div>
         </li>
-        <li class="gf-up" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 30px 0; border-top: 1px solid #E4DED5; border-bottom: 1px solid #E4DED5">
+        <li class="gf-up gf-week" style="border-bottom: 1px solid #E4DED5">
           <span style="flex: 0 0 96px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Week 04</span>
           <span class="gf-serif" style="flex: 1 1 360px; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Demo <span class="gf-i">night</span></span>
           <span style="flex: 1 1 280px; font-size: 16px; line-height: 1.5; color: #4A3F38">Present your work to a room of New York founders who are hiring.</span>
-          <span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: a 3-minute demo</span>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px"><span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: a 3-minute demo</span><span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E; padding-left: 15px">Taught by X</span></div>
         </li>
       </ol>
     </div>
@@ -244,19 +246,19 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap">
       <div style="flex: 1 1 220px; padding: 36px 24px; border-left: 1px solid #E4DED5; display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Dates</span>
-        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">[START] – [END]</span>
+        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">Jan 5 – Feb 2, 2027</span>
       </div>
       <div style="flex: 1 1 220px; padding: 36px 24px; border-left: 1px solid #E4DED5; display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Where</span>
-        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">[VENUE], New York</span>
+        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">New York, New York</span>
       </div>
       <div style="flex: 1 1 220px; padding: 36px 24px; border-left: 1px solid #E4DED5; display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Format</span>
-        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">In person, [DAYS]</span>
+        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">In person, Jan 5 – Feb 2</span>
       </div>
       <div style="flex: 1 1 220px; padding: 36px 24px; border-left: 1px solid #E4DED5; border-right: 1px solid #E4DED5; display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Tuition</span>
-        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">[YOUR PRICE]</span>
+        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">$9,899</span>
       </div>
     </div>
   </section>
@@ -296,9 +298,9 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
   </section>
 
   <footer style="padding: clamp(48px, 8vw, 96px) 24px 28px; display: flex; flex-direction: column; gap: 32px">
-    <div class="gf-serif" style="text-align: center; font-size: clamp(56px, 12.5vw, 210px); line-height: 0.85; letter-spacing: -0.045em">Gramercy <span class="gf-i">Fellows</span></div>
+    <div class="gf-serif" style="text-align: center; font-size: clamp(56px, 12.5vw, 210px); line-height: 0.85; letter-spacing: -0.045em"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width: 0.82em; height: 0.82em; margin-right: 0.08em"><rect x="6" y="58" width="52" height="4" fill="#2E241F"></rect><path d="M9 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M18 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M42 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M51 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M7 45H57" stroke="#2E241F" stroke-width="3"></path><path d="M26.5 29h11v3H36v26h-8V32h-1.5z" fill="#2E241F"></path><g><circle cx="32" cy="4.5" r="1.8" fill="#2E241F"></circle><path d="M25 12l7-5.5 7 5.5z" fill="#2E241F"></path><path d="M25.5 12.5h13L36 24h-8z" fill="#2E241F"></path><path d="M28 14.8h8l-1.6 7h-4.8z" fill="#FAF8F4"></path><rect x="31.4" y="14.5" width="1.2" height="7.5" fill="#2E241F"></rect><path d="M28.5 24h7L34 27h-4z" fill="#2E241F"></path><rect x="30.5" y="26.5" width="3" height="3" fill="#2E241F"></rect></g></svg>Gramercy <span class="gf-i">Fellows</span></div>
     <div style="max-width: 1240px; width: 100%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6E655E">
-      <span>New York City · [CONTACT EMAIL]</span>
+      <span>New York City · <a href="mailto:jacob@meetfibe.com" style="color: inherit">jacob@meetfibe.com</a></span>
       <span>© 2026 Gramercy Fellows</span>
     </div>
   </footer>
