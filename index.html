@@ -8,7 +8,7 @@
 <meta property="og:title" content="Gramercy Fellows">
 <meta property="og:description" content="Four weeks to change the trajectory of your life.">
 <meta name="theme-color" content="#FAF8F4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FAF8F4'/%3E%3Crect x='9' y='54' width='46' height='4' fill='%232E241F'/%3E%3Crect x='14' y='28' width='6' height='26' fill='%232E241F'/%3E%3Crect x='29' y='28' width='6' height='26' fill='%232E241F'/%3E%3Crect x='44' y='28' width='6' height='26' fill='%232E241F'/%3E%3Cpath d='M17 28 A15 15 0 0 1 47 28' stroke='%232E241F' stroke-width='6' fill='none'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23FAF8F4%22/%3E%3Crect x=%226%22 y=%2258%22 width=%2252%22 height=%224%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M9 58V37l2-6 2 6v21z%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M18 58V37l2-6 2 6v21z%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M42 58V37l2-6 2 6v21z%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M51 58V37l2-6 2 6v21z%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M7 45H57%22 stroke=%22%232E241F%22 stroke-width=%223%22/%3E%3Cpath d=%22M26.5 29h11v3H36v26h-8V32h-1.5z%22 fill=%22%232E241F%22/%3E%3Cg%3E%3Ccircle cx=%2232%22 cy=%224.5%22 r=%221.8%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M25 12l7-5.5 7 5.5z%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M25.5 12.5h13L36 24h-8z%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M28 14.8h8l-1.6 7h-4.8z%22 fill=%22%23FAF8F4%22/%3E%3Crect x=%2231.4%22 y=%2214.5%22 width=%221.2%22 height=%227.5%22 fill=%22%232E241F%22/%3E%3Cpath d=%22M28.5 24h7L34 27h-4z%22 fill=%22%232E241F%22/%3E%3Crect x=%2230.5%22 y=%2226.5%22 width=%223%22 height=%223%22 fill=%22%232E241F%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
@@ -22,9 +22,15 @@ input,textarea,button{font:inherit}
 .gf-count{animation:gfCount 2.1s cubic-bezier(.65,0,.35,1) .1s forwards;counter-reset:gfp var(--gfp)}
 .gf-count::after{content:counter(gfp) "%"}
 .gf-bar{transform-box:fill-box;transform-origin:50% 100%;animation:gfGrow .55s cubic-bezier(.2,.8,.2,1) both}
-.gf-b1{animation-delay:.25s}.gf-b2{animation-delay:.5s}.gf-b3{animation-delay:.75s}
+.gf-b1{animation-delay:.2s}.gf-b2{animation-delay:.32s}.gf-b5{animation-delay:.44s}.gf-b3{animation-delay:.56s}.gf-b4{animation-delay:.68s}
 .gf-base{transform-box:fill-box;transform-origin:0 50%;animation:gfWide .5s cubic-bezier(.2,.8,.2,1) .05s both}
-.gf-arch{stroke-dasharray:48;stroke-dashoffset:48;animation:gfDraw .7s cubic-bezier(.65,0,.35,1) 1.1s forwards}
+.gf-arch{stroke-dasharray:50;stroke-dashoffset:50;animation:gfDraw .6s cubic-bezier(.65,0,.35,1) .95s forwards}
+.gf-lamp{animation:gfLamp .6s cubic-bezier(.2,.8,.2,1) 1.15s both}
+.gf-glass{animation:gfLight .7s linear 1.7s both}
+.gf-halo{transform-box:fill-box;transform-origin:50% 50%;animation:gfHalo .9s cubic-bezier(.2,.8,.2,1) 1.85s both}
+@keyframes gfLamp{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes gfLight{0%{fill:#2E241F}20%{fill:#F2C46B}30%{fill:#2E241F}45%{fill:#F2C46B}55%{fill:#8A6A3A}100%{fill:#F2C46B}}
+@keyframes gfHalo{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
 .gf-in{animation:gfRise 1s cubic-bezier(.2,.8,.2,1) both}
 @keyframes gfCount{to{--gfp:100}}
 @keyframes gfLift{to{transform:translateY(-100%);visibility:hidden}}
@@ -39,7 +45,7 @@ input,textarea,button{font:inherit}
 }
 @media (prefers-reduced-motion: reduce){
 .gf-loader{display:none}
-.gf-in,.gf-up,.gf-w,.gf-bar,.gf-base,.gf-arch{animation:none !important;stroke-dashoffset:0}
+.gf-in,.gf-up,.gf-w,.gf-bar,.gf-base,.gf-arch,.gf-lamp,.gf-glass,.gf-halo{animation:none !important;stroke-dashoffset:0}
 }
 .gf-field{border:0;border-bottom:1px solid #5C4F46;background:transparent;color:#FAF8F4;padding:12px 0;font-size:17px;outline:none}
 .gf-field:focus{border-bottom-color:#FAF8F4}
@@ -52,11 +58,7 @@ input,textarea,button{font:inherit}
   
     <div class="gf-loader" aria-hidden="true" style="position: fixed; inset: 0; z-index: 50; background-color: #FAF8F4; background-image: linear-gradient(#ECE7DF, #ECE7DF), linear-gradient(#ECE7DF, #ECE7DF), linear-gradient(#ECE7DF, #ECE7DF); background-size: 1px 100%, 1px 100%, 1px 100%; background-repeat: no-repeat; background-position: 12px 0, 50% 0, calc(100% - 12px) 0; display: flex; align-items: center; justify-content: center">
       <svg width="96" height="96" viewBox="0 0 64 64" fill="none">
-        <rect class="gf-base" x="9" y="58" width="46" height="4" fill="#2E241F"></rect>
-        <rect class="gf-bar gf-b1" x="14" y="30" width="6" height="28" fill="#2E241F"></rect>
-        <rect class="gf-bar gf-b2" x="29" y="30" width="6" height="28" fill="#2E241F"></rect>
-        <rect class="gf-bar gf-b3" x="44" y="30" width="6" height="28" fill="#2E241F"></rect>
-        <path class="gf-arch" d="M17 30 A15 15 0 0 1 47 30" stroke="#2E241F" stroke-width="6"></path>
+        <defs><radialGradient id="gfHalo"><stop offset="0" stop-color="#F2C46B" stop-opacity=".55"></stop><stop offset="1" stop-color="#F2C46B" stop-opacity="0"></stop></radialGradient></defs><rect class="gf-base" x="6" y="58" width="52" height="4" fill="#2E241F"></rect><path class="gf-bar gf-b1" d="M9 58V37l2-6 2 6v21z" fill="#2E241F"></path><path class="gf-bar gf-b2" d="M18 58V37l2-6 2 6v21z" fill="#2E241F"></path><path class="gf-bar gf-b3" d="M42 58V37l2-6 2 6v21z" fill="#2E241F"></path><path class="gf-bar gf-b4" d="M51 58V37l2-6 2 6v21z" fill="#2E241F"></path><path class="gf-arch" d="M7 45H57" stroke="#2E241F" stroke-width="3"></path><path class="gf-bar gf-b5" d="M26.5 29h11v3H36v26h-8V32h-1.5z" fill="#2E241F"></path><g class="gf-lamp"><circle class="gf-halo" cx="32" cy="18" r="13" fill="url(#gfHalo)"></circle><circle cx="32" cy="4.5" r="1.8" fill="#2E241F"></circle><path d="M25 12l7-5.5 7 5.5z" fill="#2E241F"></path><path d="M25.5 12.5h13L36 24h-8z" fill="#2E241F"></path><path class="gf-glass" d="M28 14.8h8l-1.6 7h-4.8z" fill="#FAF8F4"></path><rect x="31.4" y="14.5" width="1.2" height="7.5" fill="#2E241F"></rect><path d="M28.5 24h7L34 27h-4z" fill="#2E241F"></path><rect x="30.5" y="26.5" width="3" height="3" fill="#2E241F"></rect></g>
       </svg>
       <div class="gf-count gf-serif" style="position: absolute; right: 32px; bottom: 16px; font-size: clamp(72px, 10vw, 140px); line-height: 1; letter-spacing: -0.03em; color: #2E241F"></div>
       <div style="position: absolute; left: 32px; bottom: 32px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Gramercy Fellows · Cohort 01</div>
@@ -67,7 +69,7 @@ input,textarea,button{font:inherit}
     <div style="background: #F2EEE7; border-radius: 28px; min-height: calc(100vh - 24px); display: flex; flex-direction: column; padding: 20px clamp(16px, 3vw, 32px) 32px; box-sizing: border-box">
       <nav class="gf-in" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; animation-delay: var(--gf-d)">
         <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
-          <svg width="26" height="26" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="9" y="58" width="46" height="4" fill="#2E241F"></rect><rect x="14" y="30" width="6" height="28" fill="#2E241F"></rect><rect x="29" y="30" width="6" height="28" fill="#2E241F"></rect><rect x="44" y="30" width="6" height="28" fill="#2E241F"></rect><path d="M17 30 A15 15 0 0 1 47 30" stroke="#2E241F" stroke-width="6"></path></svg>
+          <svg width="26" height="26" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="6" y="58" width="52" height="4" fill="#2E241F"></rect><path d="M9 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M18 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M42 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M51 58V37l2-6 2 6v21z" fill="#2E241F"></path><path d="M7 45H57" stroke="#2E241F" stroke-width="3"></path><path d="M26.5 29h11v3H36v26h-8V32h-1.5z" fill="#2E241F"></path><g><circle cx="32" cy="4.5" r="1.8" fill="#2E241F"></circle><path d="M25 12l7-5.5 7 5.5z" fill="#2E241F"></path><path d="M25.5 12.5h13L36 24h-8z" fill="#2E241F"></path><path d="M28 14.8h8l-1.6 7h-4.8z" fill="#FAF8F4"></path><rect x="31.4" y="14.5" width="1.2" height="7.5" fill="#2E241F"></rect><path d="M28.5 24h7L34 27h-4z" fill="#2E241F"></path><rect x="30.5" y="26.5" width="3" height="3" fill="#2E241F"></rect></g></svg>
           <span class="gf-serif" style="font-size: 24px; letter-spacing: -0.01em">Gramercy Fellows</span>
         </a>
         <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
