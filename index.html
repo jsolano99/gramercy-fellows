@@ -301,27 +301,32 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
         </div>
         <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #D9D0C7; max-width: 420px">Spend them in the rooms that matter. The application takes two minutes. We read every one and reply within a week. Applications close [DATE].</p>
       </div>
-      <form style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 26px">
+      <form id="gf-form" action="https://api.web3forms.com/submit" method="POST" style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 26px">
+        <input type="hidden" name="access_key" value="90f3df24-019a-41f8-a4e3-12309b846e4e">
+        <input type="hidden" name="subject" value="New Gramercy Fellows application">
+        <input type="hidden" name="from_name" value="Gramercy Fellows">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
         <div style="display: flex; flex-direction: column; gap: 4px">
           <label for="gf-name" style="font-size: 13px; color: #BDB3AA">Full name</label>
-          <input id="gf-name" class="gf-field" type="text" autocomplete="name">
+          <input id="gf-name" name="Name" class="gf-field" type="text" autocomplete="name" required>
         </div>
         <div style="display: flex; flex-direction: column; gap: 4px">
           <label for="gf-email" style="font-size: 13px; color: #BDB3AA">Email</label>
-          <input id="gf-email" class="gf-field" type="email" autocomplete="email">
+          <input id="gf-email" name="email" class="gf-field" type="email" autocomplete="email" required>
         </div>
         <div style="display: flex; flex-direction: column; gap: 4px">
           <label for="gf-link" style="font-size: 13px; color: #BDB3AA">LinkedIn or personal site</label>
-          <input id="gf-link" class="gf-field" type="url">
+          <input id="gf-link" name="LinkedIn or site" class="gf-field" type="text" inputmode="url" autocomplete="url" autocapitalize="off">
         </div>
         <div style="display: flex; flex-direction: column; gap: 4px">
           <label for="gf-why" style="font-size: 13px; color: #BDB3AA">Where do you want to be six months after the program?</label>
-          <textarea id="gf-why" class="gf-field" rows="3" style="resize: vertical"></textarea>
+          <textarea id="gf-why" name="Six months after the program" class="gf-field" rows="3" style="resize: vertical" required></textarea>
         </div>
-        <button type="button" style="align-self: flex-start; border: 0; background: #FAF8F4; color: #2E241F; padding: 6px 24px 6px 6px; border-radius: 999px; display: inline-flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; min-height: 48px; cursor: pointer">
+        <button type="submit" id="gf-submit" style="align-self: flex-start; border: 0; background: #FAF8F4; color: #2E241F; padding: 6px 24px 6px 6px; border-radius: 999px; display: inline-flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; min-height: 48px; cursor: pointer">
           <span style="width: 36px; height: 36px; border-radius: 999px; background: #2E241F; display: inline-flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#FAF8F4" stroke-width="1.6" aria-hidden="true"><path d="M3 11L11 3M5 3h6v6"></path></svg></span>
-          Submit application
+          <span id="gf-submit-label">Submit application</span>
         </button>
+        <p id="gf-form-status" role="status" aria-live="polite" style="margin: -10px 0 0; font-size: 14px; line-height: 1.5; color: #D9D0C7; min-height: 1.5em"></p>
       </form>
     </div>
   </section>
@@ -369,6 +374,25 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
   m.addEventListener('click', function(e){ if(e.target.closest('a')) set(false); });
   document.addEventListener('click', function(e){ if(!m.hidden && !m.contains(e.target)) set(false); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('gf-form'); if(!f) return;
+  var btn=document.getElementById('gf-submit'), label=document.getElementById('gf-submit-label'), status=document.getElementById('gf-form-status');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    btn.disabled=true; btn.style.opacity='.6'; label.textContent='Sending…'; status.textContent='';
+    fetch(f.action, { method:'POST', headers:{ 'Accept':'application/json' }, body:new FormData(f) })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(d){ if(!r.ok || !d.success) throw new Error(d.message||'Failed'); }); })
+      .then(function(){
+        f.innerHTML='<div role="status" style="display:flex;flex-direction:column;gap:14px;padding:8px 0"><p class="gf-serif" style="margin:0;font-size:clamp(34px,4vw,48px);line-height:1;letter-spacing:-0.02em;color:#FAF8F4">Application <span class="gf-i">received.</span></p><p style="margin:0;font-size:16px;line-height:1.55;color:#D9D0C7;max-width:420px">Thank you. We read every one and reply within a week.</p></div>';
+      })
+      .catch(function(){
+        btn.disabled=false; btn.style.opacity=''; label.textContent='Submit application';
+        status.innerHTML='Something went wrong. Please try again, or email <a href="mailto:jacob@meetfibe.com" style="color:#FAF8F4">jacob@meetfibe.com</a>.';
+      });
+  });
 })();
 </script>
 </body>
