@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gramercy Fellows — Four weeks to change the trajectory of your life</title>
-<meta name="description" content="A four-week, in-person cohort in New York. Learn the skills startups hire for, ship real work every week, and meet the founders who decide who gets hired.">
+<title>Gramercy Fellows — Two weeks to change the trajectory of your life</title>
+<meta name="description" content="A two-week, in-person cohort in New York. Daily workshops on the skills that get you hired, a guest speaker at every meal, and proof of your work to show for it.">
 <meta property="og:title" content="Gramercy Fellows">
-<meta property="og:description" content="Four weeks to change the trajectory of your life.">
+<meta property="og:description" content="Two weeks to change the trajectory of your life.">
 <meta name="theme-color" content="#FAF8F4">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@ input,textarea,button{font:inherit}
 .gf-loader{display:none}
 .gf-in,.gf-up,.gf-w,.gf-bar,.gf-base,.gf-arch,.gf-lamp,.gf-glass,.gf-halo{animation:none !important;stroke-dashoffset:0}
 }
-.gf-week{display:grid;grid-template-columns:96px minmax(0,1.3fr) minmax(0,1fr) 210px;align-items:baseline;gap:12px 32px;padding:30px 0;border-top:1px solid #E4DED5}
+.gf-week{display:grid;grid-template-columns:120px minmax(0,1.3fr) minmax(0,1fr) 210px;align-items:baseline;gap:12px 32px;padding:30px 0;border-top:1px solid #E4DED5}
 @media (max-width: 900px){.gf-week{grid-template-columns:minmax(0,1fr)}}
 .gf-burger{display:none}
 .gf-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:200px;padding:8px;background:#FAF8F4;border:1px solid #E4DED5;border-radius:20px;box-shadow:0 14px 36px rgba(46,36,31,.14);display:flex;flex-direction:column}
@@ -66,6 +66,16 @@ input,textarea,button{font:inherit}
 .gf-brand-mark{width:22px;height:22px}
 }
 @media (max-width: 370px){.gf-brand-text{font-size:17px !important}}
+.gf-q-opt{display:block;width:100%;text-align:left;border:1px solid #CFC7BC;background:#FAF8F4;color:#2E241F;border-radius:16px;padding:16px 18px;font-size:16px;line-height:1.3;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease}
+.gf-q-opt:hover{border-color:#2E241F}
+.gf-q-opt[aria-pressed="true"]{background:#2E241F;color:#FAF8F4;border-color:#2E241F}
+.gf-q-link{border:0;background:none;padding:0;color:#6E655E;font-size:14px;text-decoration:underline;cursor:pointer}
+.gf-q-bar{height:3px;background:#E4DED5;border-radius:3px;overflow:hidden}
+.gf-q-bar>i{display:block;height:100%;background:#2E241F;transition:width .3s ease}
+.gf-q-in{animation:gfQIn .35s cubic-bezier(.2,.8,.2,1) both}
+@keyframes gfQIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.gf-q-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width: 520px){.gf-q-grid{grid-template-columns:minmax(0,1fr)}}
 .gf-field{border:0;border-bottom:1px solid #5C4F46;background:transparent;color:#FAF8F4;padding:12px 0;font-size:17px;outline:none}
 .gf-field:focus{border-bottom-color:#FAF8F4}
 </style>
@@ -109,6 +119,7 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
         <div class="gf-navr" style="display: flex; align-items: center; gap: 28px; flex-shrink: 0">
           <a class="gf-navlink" href="#program" style="text-decoration: none; font-size: 15px">Program</a>
           <a class="gf-navlink" href="#details" style="text-decoration: none; font-size: 15px">Details</a>
+          <a class="gf-navlink" href="#fit" style="text-decoration: none; font-size: 15px">Fit check</a>
           <a class="gf-apply" href="#apply" style="text-decoration: none; background: #2E241F; color: #FAF8F4; padding: 6px 20px 6px 6px; border-radius: 999px; display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; min-height: 44px; box-sizing: border-box">
             <span class="gf-apply-dot" style="width: 34px; height: 34px; border-radius: 999px; background: #FAF8F4; display: inline-flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2E241F" stroke-width="1.6" aria-hidden="true"><path d="M3 11L11 3M5 3h6v6"></path></svg></span>
             Apply
@@ -118,16 +129,17 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
         <div id="gf-menu" class="gf-menu" hidden>
           <a href="#program">Program</a>
           <a href="#details">Details</a>
+          <a href="#fit">Fit check</a>
         </div>
       </nav>
 
       <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 28px; padding: 72px 0 40px">
-        <div class="gf-in" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E; animation-delay: calc(var(--gf-d) + 0.05s)">New York City · Cohort 01 · Four weeks · Jan 5 – Feb 2, 2027</div>
-        <h1 class="gf-serif gf-in" style="margin: 0; font-size: clamp(54px, 8.6vw, 132px); line-height: 0.94; letter-spacing: -0.035em; max-width: 1180px; animation-delay: calc(var(--gf-d) + 0.12s)">Four weeks to change the
+        <div class="gf-in" style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E; animation-delay: calc(var(--gf-d) + 0.05s)">New York City · Cohort 01 · Two weeks · Jan 5 – 19, 2027</div>
+        <h1 class="gf-serif gf-in" style="margin: 0; font-size: clamp(54px, 8.6vw, 132px); line-height: 0.94; letter-spacing: -0.035em; max-width: 1180px; animation-delay: calc(var(--gf-d) + 0.12s)">Two weeks to change the
           <span aria-hidden="true" style="display: inline-block; width: 1.35em; height: 0.72em; border-radius: 0.18em; vertical-align: 0.02em; background: #2F4A36; overflow: hidden; position: relative"><svg viewBox="0 0 120 64" preserveAspectRatio="xMidYMax slice" style="position: absolute; inset: 0; width: 100%; height: 100%" fill="none" stroke="#FAF8F4" stroke-opacity="0.85" stroke-width="2.5"><path d="M10 64V30M24 64V30M38 64V30M52 64V30M66 64V30M80 64V30M94 64V30M108 64V30M4 30h112M4 40h112"></path><path d="M44 30a16 16 0 0 1 32 0"></path></svg></span>
           trajectory of your <span class="gf-i">life.</span></h1>
         <div class="gf-in" aria-hidden="true" style="width: 1px; height: 64px; background: #CFC7BC; animation-delay: calc(var(--gf-d) + 0.2s)"></div>
-        <p class="gf-in" style="margin: 0; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.5; max-width: 560px; animation-delay: calc(var(--gf-d) + 0.26s)">Most people spend years trying to get into the right rooms. Gramercy Fellows puts you in them in a month, <span class="gf-serif gf-i" style="font-size: 1.25em">with the <span id="gf-cycle" style="display: inline-block; white-space: nowrap; text-align: left; transition: opacity .35s ease, filter .35s ease, transform .35s ease">founders</span><br>that can move your career forward.</span></p>
+        <p class="gf-in" style="margin: 0; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.5; max-width: 560px; animation-delay: calc(var(--gf-d) + 0.26s)">Most people spend years trying to get into the right rooms. Gramercy Fellows puts you in them in two weeks, <span class="gf-serif gf-i" style="font-size: 1.25em">with the <span id="gf-cycle" style="display: inline-block; white-space: nowrap; text-align: left; transition: opacity .35s ease, filter .35s ease, transform .35s ease">founders</span><br>that can move your career forward.</span></p>
         <a href="#apply" class="gf-in" style="text-decoration: none; background: #FAF8F4; color: #2E241F; padding: 6px 22px 6px 6px; border-radius: 999px; display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; min-height: 44px; box-sizing: border-box; box-shadow: 0 1px 0 #E2DCD2; animation-delay: calc(var(--gf-d) + 0.32s)">
           <span style="width: 34px; height: 34px; border-radius: 999px; background: #2E241F; display: inline-flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#FAF8F4" stroke-width="1.6" aria-hidden="true"><path d="M3 11L11 3M5 3h6v6"></path></svg></span>
           Apply for Cohort 01
@@ -138,10 +150,10 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
 
   <section style="padding: 0 12px 12px">
     <div style="position: relative; background-color: #2F4A36; background-image: repeating-linear-gradient(90deg, rgba(250,248,244,0.07) 0 1px, transparent 1px 72px); border-radius: 28px; min-height: 640px; padding: 28px clamp(16px, 3vw, 32px); box-sizing: border-box; display: flex; flex-direction: column; color: #FAF8F4; overflow: hidden">
-      <p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.45; font-weight: 500">Four weeks, one cohort, the rooms that usually take years to get into.</p>
+      <p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.45; font-weight: 500">Two weeks, one cohort, the rooms that usually take years to get into.</p>
       <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 56px 0">
         <div class="gf-up" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px">
-          <span class="gf-serif" style="background: #FAF8F4; color: #2E241F; border-radius: 999px; padding: 4px 26px 8px; font-size: clamp(32px, 4.4vw, 60px); line-height: 1">Four</span>
+          <span class="gf-serif" style="background: #FAF8F4; color: #2E241F; border-radius: 999px; padding: 4px 26px 8px; font-size: clamp(32px, 4.4vw, 60px); line-height: 1">Two</span>
           <span class="gf-serif" style="background: #FAF8F4; color: #2E241F; border-radius: 999px; padding: 4px 26px 8px; font-size: clamp(32px, 4.4vw, 60px); line-height: 1">weeks</span>
           <span aria-hidden="true" style="width: clamp(48px, 5vw, 68px); height: clamp(48px, 5vw, 68px); border: 2px solid #FAF8F4; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#FAF8F4" stroke-width="2"><circle cx="13" cy="13" r="9"></circle><path d="M13 7v6l4 3"></path></svg></span>
         </div>
@@ -182,7 +194,7 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
       <div class="gf-up" style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px">
         <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E; padding: 0 4px 10px; border-bottom: 1px solid #E4DED5">Career switchers</div>
         <div style="background-color: #2F4A36; background-image: repeating-linear-gradient(90deg, rgba(250,248,244,0.08) 0 1px, transparent 1px 28px); color: #FAF8F4; border-radius: 24px; padding: 28px; min-height: 420px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
-          <h2 class="gf-serif" style="margin: 0; font-size: 38px; line-height: 1; letter-spacing: -0.02em">Four weeks, not <span class="gf-i">four years.</span></h2>
+          <h2 class="gf-serif" style="margin: 0; font-size: 38px; line-height: 1; letter-spacing: -0.02em">Two weeks, not <span class="gf-i">four years.</span></h2>
           <svg width="96" height="96" viewBox="0 0 96 96" fill="#FAF8F4" aria-hidden="true" style="align-self: center"><rect x="0" y="0" width="32" height="32"></rect><rect x="32" y="32" width="32" height="32"></rect><rect x="64" y="64" width="32" height="32"></rect></svg>
           <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #E8EFE9">Leaving a big company, consulting or school for the startup world, and want the shortcut that actually works.</p>
         </div>
@@ -202,35 +214,59 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
     <div style="max-width: 1240px; margin: 0 auto; padding: clamp(88px, 12vw, 150px) 24px">
       <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 22px; margin-bottom: clamp(56px, 8vw, 96px)">
         <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">The program</div>
-        <h2 class="gf-serif gf-up" style="margin: 0; font-size: clamp(44px, 6.4vw, 96px); line-height: 0.96; letter-spacing: -0.035em; max-width: 1000px">Four weeks. Four skills. Four things <span class="gf-i">you shipped.</span></h2>
-        <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4A3F38; max-width: 520px">Every week is a working session, a real deliverable, and a dinner with founders building the companies you want to join.</p>
+        <h2 class="gf-serif gf-up" style="margin: 0; font-size: clamp(44px, 6.4vw, 96px); line-height: 0.96; letter-spacing: -0.035em; max-width: 1000px">Two weeks. Six skills. A guest at <span class="gf-i">every meal.</span></h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4A3F38; max-width: 520px">Every day is a hands-on workshop, a meal with a guest speaker, and a fireside chat with someone who built a career in the world you want to join.</p>
       </div>
       <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
         <li class="gf-up gf-week">
-          <span style="flex: 0 0 96px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Week 01</span>
-          <span class="gf-serif" style="flex: 1 1 360px; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Work with AI like a <span class="gf-i">team of five</span></span>
-          <span style="flex: 1 1 280px; font-size: 16px; line-height: 1.5; color: #4A3F38">The research, writing and analysis workflows the best operators use every day.</span>
-          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px"><span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: your AI stack</span><span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E; padding-left: 15px">Taught by X</span></div>
+          <span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Workshop 01</span>
+          <span class="gf-serif" style="font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Presenting &amp; <span class="gf-i">storytelling</span></span>
+          <span style="font-size: 16px; line-height: 1.5; color: #4A3F38">Hold a room, make your work land, and tell the story only you can tell.</span>
+          <span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E">Taught by X</span>
         </li>
         <li class="gf-up gf-week">
-          <span style="flex: 0 0 96px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Week 02</span>
-          <span class="gf-serif" style="flex: 1 1 360px; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Run a project <span class="gf-i">end to end</span></span>
-          <span style="flex: 1 1 280px; font-size: 16px; line-height: 1.5; color: #4A3F38">Scope, prioritize and deliver a real brief from a partner startup.</span>
-          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px"><span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: a partner project</span><span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E; padding-left: 15px">Taught by X</span></div>
+          <span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Workshop 02</span>
+          <span class="gf-serif" style="font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em"><span class="gf-i">Selling</span></span>
+          <span style="font-size: 16px; line-height: 1.5; color: #4A3F38">Sell an idea, a product or yourself to people who don't owe you a yes.</span>
+          <span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E">Taught by X</span>
         </li>
         <li class="gf-up gf-week">
-          <span style="flex: 0 0 96px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Week 03</span>
-          <span class="gf-serif" style="flex: 1 1 360px; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Build <span class="gf-i">in public</span></span>
-          <span style="flex: 1 1 280px; font-size: 16px; line-height: 1.5; color: #4A3F38">Write and post about your work so the right people find you first.</span>
-          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px"><span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: three public posts</span><span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E; padding-left: 15px">Taught by X</span></div>
+          <span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Workshop 03</span>
+          <span class="gf-serif" style="font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em"><span class="gf-i">Negotiating</span></span>
+          <span style="font-size: 16px; line-height: 1.5; color: #4A3F38">Ask for more and get it: offers, scope, raises and deals.</span>
+          <span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E">Taught by X</span>
+        </li>
+        <li class="gf-up gf-week">
+          <span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Workshop 04</span>
+          <span class="gf-serif" style="font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em"><span class="gf-i">Writing</span></span>
+          <span style="font-size: 16px; line-height: 1.5; color: #4A3F38">Write clearly enough that busy people read to the end and reply.</span>
+          <span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E">Taught by X</span>
+        </li>
+        <li class="gf-up gf-week">
+          <span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Workshop 05</span>
+          <span class="gf-serif" style="font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em"><span class="gf-i">Confidence</span></span>
+          <span style="font-size: 16px; line-height: 1.5; color: #4A3F38">Walk into rooms of people further along and act like you belong there.</span>
+          <span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E">Taught by X</span>
         </li>
         <li class="gf-up gf-week" style="border-bottom: 1px solid #E4DED5">
-          <span style="flex: 0 0 96px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Week 04</span>
-          <span class="gf-serif" style="flex: 1 1 360px; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em">Demo <span class="gf-i">night</span></span>
-          <span style="flex: 1 1 280px; font-size: 16px; line-height: 1.5; color: #4A3F38">Present your work to a room of New York founders who are hiring.</span>
-          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px"><span style="flex: 0 0 auto; font-size: 13px; border: 1px solid #CFC7BC; border-radius: 999px; padding: 8px 14px">Ship: a 3-minute demo</span><span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E; padding-left: 15px">Taught by X</span></div>
+          <span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Workshop 06</span>
+          <span class="gf-serif" style="font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -0.02em"><span class="gf-i">Networking</span></span>
+          <span style="font-size: 16px; line-height: 1.5; color: #4A3F38">Turn one conversation into a relationship that keeps paying off.</span>
+          <span class="gf-serif gf-i" style="font-size: 18px; line-height: 1.2; color: #6E655E">Taught by X</span>
         </li>
       </ol>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: clamp(40px, 6vw, 64px)">
+        <div class="gf-up" style="flex: 1 1 320px; background: #F2EEE7; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Every day</span>
+          <span class="gf-serif" style="font-size: clamp(30px, 3vw, 40px); line-height: 1.02; letter-spacing: -0.02em">A meal with a <span class="gf-i">guest speaker</span></span>
+          <span style="font-size: 16px; line-height: 1.5; color: #4A3F38">Breakfast or dinner with someone a few chapters ahead of you, in a room small enough to ask the real questions.</span>
+        </div>
+        <div class="gf-up" style="flex: 2 1 420px; background: #2F4A36; color: #FAF8F4; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #DCE6DE">Fireside chats</span>
+          <span class="gf-serif" style="font-size: clamp(30px, 3vw, 40px); line-height: 1.02; letter-spacing: -0.02em">Hear it from people <span class="gf-i">inside the field</span></span>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px"><span style="font-size: 14px; border: 1px solid rgba(250,248,244,.35); border-radius: 999px; padding: 8px 14px">Big tech</span><span style="font-size: 14px; border: 1px solid rgba(250,248,244,.35); border-radius: 999px; padding: 8px 14px">Tech entrepreneurship</span><span style="font-size: 14px; border: 1px solid rgba(250,248,244,.35); border-radius: 999px; padding: 8px 14px">Non-tech entrepreneurship</span><span style="font-size: 14px; border: 1px solid rgba(250,248,244,.35); border-radius: 999px; padding: 8px 14px">Finance</span><span style="font-size: 14px; border: 1px solid rgba(250,248,244,.35); border-radius: 999px; padding: 8px 14px">Consulting</span><span style="font-size: 14px; border: 1px solid rgba(250,248,244,.35); border-radius: 999px; padding: 8px 14px">Traditional business</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -239,19 +275,23 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
       <div style="max-width: 1140px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(48px, 6vw, 72px)">
         <h2 class="gf-serif gf-up" style="margin: 0; text-align: center; font-size: clamp(44px, 6.4vw, 96px); line-height: 0.96; letter-spacing: -0.035em">Walk in with potential. Walk out with <span class="gf-i">proof.</span></h2>
         <div style="display: flex; flex-wrap: wrap; gap: 0">
-          <div class="gf-up" style="flex: 1 1 240px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
-            <span class="gf-serif" style="font-size: 44px; line-height: 1">04</span>
-            <span style="font-size: 16px; line-height: 1.5">Pieces of shipped work to show in any interview</span>
-          </div>
-          <div class="gf-up" style="flex: 1 1 240px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
-            <span class="gf-serif" style="font-size: 44px; line-height: 1">[N]</span>
-            <span style="font-size: 16px; line-height: 1.5">Direct introductions to New York startups that are hiring</span>
-          </div>
-          <div class="gf-up" style="flex: 1 1 240px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
+          <div class="gf-up" style="flex: 1 1 200px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
             <span class="gf-serif" style="font-size: 44px; line-height: 1">01</span>
-            <span style="font-size: 16px; line-height: 1.5">Working AI toolkit you'll use every day after</span>
+            <span style="font-size: 16px; line-height: 1.5">Capstone project, presented live to New York founders who are hiring</span>
           </div>
-          <div class="gf-up" style="flex: 1 1 240px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
+          <div class="gf-up" style="flex: 1 1 200px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
+            <span class="gf-serif" style="font-size: 44px; line-height: 1">01</span>
+            <span style="font-size: 16px; line-height: 1.5">Recorded presentation you can send to anyone</span>
+          </div>
+          <div class="gf-up" style="flex: 1 1 200px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
+            <span class="gf-serif" style="font-size: 44px; line-height: 1">01</span>
+            <span style="font-size: 16px; line-height: 1.5">Published blog post, plus public posts about your work</span>
+          </div>
+          <div class="gf-up" style="flex: 1 1 200px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
+            <span class="gf-serif" style="font-size: 44px; line-height: 1">[N]</span>
+            <span style="font-size: 16px; line-height: 1.5">Direct introductions to New York companies that are hiring</span>
+          </div>
+          <div class="gf-up" style="flex: 1 1 200px; padding: 24px; border-left: 1px solid #DDD6CC; display: flex; flex-direction: column; gap: 12px">
             <span class="gf-serif" style="font-size: 44px; line-height: 1">[N]</span>
             <span style="font-size: 16px; line-height: 1.5">Peers who will be founders and early hires for years</span>
           </div>
@@ -275,7 +315,7 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap">
       <div style="flex: 1 1 220px; padding: 36px 24px; border-left: 1px solid #E4DED5; display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Dates</span>
-        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">Jan 5 – Feb 2, 2027</span>
+        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">Jan 5 – 19, 2027</span>
       </div>
       <div style="flex: 1 1 220px; padding: 36px 24px; border-left: 1px solid #E4DED5; display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Where</span>
@@ -283,7 +323,7 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
       </div>
       <div style="flex: 1 1 220px; padding: 36px 24px; border-left: 1px solid #E4DED5; display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Format</span>
-        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">In person, Jan 5 – Feb 2</span>
+        <span class="gf-serif" style="font-size: 30px; line-height: 1.05">In person, Jan 5 – 19</span>
       </div>
       <div style="flex: 1 1 220px; padding: 36px 24px; border-left: 1px solid #E4DED5; border-right: 1px solid #E4DED5; display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">Tuition</span>
@@ -292,12 +332,23 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
     </div>
   </section>
 
+  <section id="fit" style="max-width: 1240px; margin: 0 auto; padding: clamp(72px, 10vw, 128px) 24px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; gap: clamp(32px, 6vw, 80px); align-items: flex-start">
+      <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 20px">
+        <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6E655E">60 seconds</div>
+        <h2 class="gf-serif gf-up" style="margin: 0; font-size: clamp(44px, 6vw, 88px); line-height: 0.96; letter-spacing: -0.035em">Is the fellowship a <span class="gf-i">fit for you?</span></h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4A3F38; max-width: 420px">Five quick questions. If it's a fit, your answers go along with your application.</p>
+      </div>
+      <div id="gf-quiz" style="flex: 1.3 1 420px; background: #F2EEE7; border-radius: 28px; padding: clamp(24px, 3vw, 40px); box-sizing: border-box; min-height: 360px; display: flex; flex-direction: column; gap: 24px"></div>
+    </div>
+  </section>
+
   <section id="apply" style="padding: 12px">
     <div style="background: #2E241F; color: #FAF8F4; border-radius: 28px; padding: clamp(56px, 8vw, 104px) clamp(20px, 4vw, 56px); box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 56px">
       <div style="flex: 1 1 380px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
         <div style="display: flex; flex-direction: column; gap: 24px">
           <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #BDB3AA">Cohort 01 · 12 seats</div>
-          <h2 class="gf-serif" style="margin: 0; font-size: clamp(48px, 6vw, 88px); line-height: 0.96; letter-spacing: -0.035em">The next four weeks will pass <span class="gf-i">either way.</span></h2>
+          <h2 class="gf-serif" style="margin: 0; font-size: clamp(48px, 6vw, 88px); line-height: 0.96; letter-spacing: -0.035em">The next two weeks will pass <span class="gf-i">either way.</span></h2>
         </div>
         <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #D9D0C7; max-width: 420px">Spend them in the rooms that matter. The application takes two minutes. We read every one and reply within a week. Applications close [DATE].</p>
       </div>
@@ -305,6 +356,7 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
         <input type="hidden" name="access_key" value="90f3df24-019a-41f8-a4e3-12309b846e4e">
         <input type="hidden" name="subject" value="New Gramercy Fellows application">
         <input type="hidden" name="from_name" value="Gramercy Fellows">
+        <input type="hidden" name="Fit check" id="gf-fit-answers" value="Not taken">
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
         <div style="display: flex; flex-direction: column; gap: 4px">
           <label for="gf-name" style="font-size: 13px; color: #BDB3AA">Full name</label>
@@ -393,6 +445,72 @@ gfTop(); addEventListener('DOMContentLoaded',gfTop); addEventListener('load',fun
         status.innerHTML='Something went wrong. Please try again, or email <a href="mailto:jacob@meetfibe.com" style="color:#FAF8F4">jacob@meetfibe.com</a>.';
       });
   });
+})();
+</script>
+<script>
+(function(){
+  var root=document.getElementById('gf-quiz'); if(!root) return;
+  var KEY='90f3df24-019a-41f8-a4e3-12309b846e4e';
+  var Q=[
+    {id:'nyc', q:'Can you be in New York, in person, Jan 5 – 19?', opts:['Yes','No'], no:{'No':'Cohort 01 is fully in person in New York, Jan 5 – 19.'}},
+    {id:'time', q:'Can you clear your schedule for those two weeks?', opts:['Yes, fully','Mostly','No'], no:{'No':'The program runs every day for two weeks, and the people who get the most from it are there for all of it.'}},
+    {id:'now', q:'Where are you right now?', opts:['In school','Recently graduated','1–5 years into my career','Changing careers','6+ years in']},
+    {id:'world', q:'Which world pulls you most?', opts:['Big tech','Tech entrepreneurship','Non-tech entrepreneurship','Finance','Consulting','Traditional business'], grid:true},
+    {id:'skill', q:'Which skill would change the most for you?', opts:['Presenting & storytelling','Selling','Negotiating','Writing','Confidence','Networking'], grid:true}
+  ];
+  var A={}, i=0;
+  function esc(t){ return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function summary(){ return Q.filter(function(q){return A[q.id];}).map(function(q){ return q.q+' '+A[q.id]; }).join(' | '); }
+  function render(){
+    var q=Q[i];
+    root.innerHTML='<div class="gf-q-bar" aria-hidden="true"><i style="width:'+(i/Q.length*100)+'%"></i></div>'+
+      '<div class="gf-q-in" style="display:flex;flex-direction:column;gap:20px">'+
+      '<div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#6E655E">Question '+(i+1)+' of '+Q.length+'</div>'+
+      '<h3 class="gf-serif" style="margin:0;font-size:clamp(28px,3vw,40px);line-height:1.05;letter-spacing:-.02em">'+esc(q.q)+'</h3>'+
+      '<div class="'+(q.grid?'gf-q-grid':'')+'" style="'+(q.grid?'':'display:flex;flex-direction:column;gap:10px')+'">'+
+      q.opts.map(function(o){ return '<button type="button" class="gf-q-opt" aria-pressed="'+(A[q.id]===o)+'" data-v="'+esc(o)+'">'+esc(o)+'</button>'; }).join('')+
+      '</div>'+(i>0?'<div><button type="button" class="gf-q-link" data-back>Back</button></div>':'')+'</div>';
+  }
+  function result(){
+    var reason=null;
+    Q.forEach(function(q){ if(!reason && q.no && q.no[A[q.id]]) reason=q.no[A[q.id]]; });
+    var input=document.getElementById('gf-fit-answers');
+    if(!reason){
+      if(input) input.value=summary();
+      root.innerHTML='<div class="gf-q-in" style="display:flex;flex-direction:column;gap:20px">'+
+        '<svg width="56" height="56" viewBox="0 0 64 64" fill="#2E241F" aria-hidden="true"><rect x="6" y="58" width="52" height="4"/><path d="M9 58V37l2-6 2 6v21zM18 58V37l2-6 2 6v21zM42 58V37l2-6 2 6v21zM51 58V37l2-6 2 6v21z"/><path d="M7 45H57" stroke="#2E241F" stroke-width="3"/><path d="M26.5 29h11v3H36v26h-8V32h-1.5z"/><circle cx="32" cy="4.5" r="1.8"/><path d="M25 12l7-5.5 7 5.5zM25.5 12.5h13L36 24h-8zM28.5 24h7L34 27h-4z"/><path d="M28 14.8h8l-1.6 7h-4.8z" fill="#F2C46B"/><rect x="31.4" y="14.5" width="1.2" height="7.5"/><rect x="30.5" y="26.5" width="3" height="3"/></svg>'+
+        '<h3 class="gf-serif" style="margin:0;font-size:clamp(36px,4vw,56px);line-height:1;letter-spacing:-.03em">You\'re a <span class="gf-i">fit.</span></h3>'+
+        '<p style="margin:0;font-size:17px;line-height:1.55;color:#4A3F38;max-width:460px">You\'ll sharpen your <strong>'+esc(A.skill.toLowerCase())+'</strong> and sit across from people in <strong>'+esc(A.world.toLowerCase())+'</strong>. Your answers will go along with your application.</p>'+
+        '<div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px"><a href="#apply" style="text-decoration:none;background:#2E241F;color:#FAF8F4;padding:6px 22px 6px 6px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;min-height:48px;box-sizing:border-box"><span style="width:36px;height:36px;border-radius:999px;background:#FAF8F4;display:inline-flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2E241F" stroke-width="1.6"><path d="M3 11L11 3M5 3h6v6"/></svg></span>Continue to application</a>'+
+        '<button type="button" class="gf-q-link" data-restart>Start over</button></div></div>';
+    } else {
+      if(input) input.value='Not taken';
+      root.innerHTML='<div class="gf-q-in" style="display:flex;flex-direction:column;gap:20px">'+
+        '<h3 class="gf-serif" style="margin:0;font-size:clamp(36px,4vw,56px);line-height:1;letter-spacing:-.03em">Not this cohort. <span class="gf-i">Maybe the next.</span></h3>'+
+        '<p style="margin:0;font-size:17px;line-height:1.55;color:#4A3F38;max-width:460px">'+esc(reason)+' Leave your email and we\'ll tell you when future cohorts open.</p>'+
+        '<form id="gf-later" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><input name="email" type="email" required placeholder="you@email.com" autocomplete="email" style="flex:1 1 220px;min-width:0;border:1px solid #CFC7BC;background:#FAF8F4;border-radius:999px;padding:13px 18px;font-size:16px;color:#2E241F;outline:none">'+
+        '<button type="submit" style="border:0;background:#2E241F;color:#FAF8F4;border-radius:999px;padding:13px 22px;font-size:15px;font-weight:500;cursor:pointer">Notify me</button></form>'+
+        '<p id="gf-later-status" role="status" aria-live="polite" style="margin:0;font-size:14px;color:#6E655E;min-height:1.4em"></p>'+
+        '<div><button type="button" class="gf-q-link" data-restart>Start over</button></div></div>';
+      var lf=document.getElementById('gf-later'), st=document.getElementById('gf-later-status');
+      lf.addEventListener('submit', function(e){
+        e.preventDefault(); var b=lf.querySelector('button'); b.disabled=true; b.textContent='Sending…';
+        var fd=new FormData(lf); fd.append('access_key',KEY); fd.append('subject','Gramercy Fellows: future cohort interest'); fd.append('from_name','Gramercy Fellows'); fd.append('Fit check',summary()); fd.append('Not a fit because',reason);
+        fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+          .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ if(!r.ok||!d.success) throw 0; }); })
+          .then(function(){ lf.remove(); st.style.color='#2E241F'; st.textContent='You\'re on the list. We\'ll be in touch.'; })
+          .catch(function(){ b.disabled=false; b.textContent='Notify me'; st.textContent='Something went wrong. Please try again.'; });
+      });
+    }
+  }
+  root.addEventListener('click', function(e){
+    var o=e.target.closest('.gf-q-opt');
+    if(o){ A[Q[i].id]=o.getAttribute('data-v'); o.setAttribute('aria-pressed','true');
+      setTimeout(function(){ i++; if(i<Q.length) render(); else result(); }, 220); return; }
+    if(e.target.closest('[data-back]')){ i=Math.max(0,i-1); render(); return; }
+    if(e.target.closest('[data-restart]')){ A={}; i=0; render(); }
+  });
+  render();
 })();
 </script>
 </body>
